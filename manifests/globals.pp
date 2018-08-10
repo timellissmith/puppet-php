@@ -117,10 +117,10 @@ class php::globals (
     'RedHat': {
       case $rhscl_mode {
         'remi': {
-          $rhscl_root             = "/opt/remi/${php_version}/root"
-          $default_config_root    = "/etc/opt/remi/${php_version}"
+          $rhscl_root             = join(['/opt/remi/php', regsubst($php_version, '\.', ''), '/root/'], '')
+          $default_config_root    = join(['/etc/opt/remi/php', regsubst($php_version, '\.', '')], '')
           $default_fpm_pid_file   = '/var/run/php-fpm/php-fpm.pid'
-          $package_prefix         = "${php_version}-php-"
+          $package_prefix         = join([regsubst($php_version, '.', ''),"-php-"], '')
           $fpm_service_name       = "${php_version}-php-fpm"
         }
         'rhscl': {

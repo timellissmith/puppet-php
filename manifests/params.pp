@@ -111,7 +111,7 @@ class php::params inherits php::globals {
           $fpm_inifile             = $config_root_inifile
           $fpm_config_file         = "${config_root}/php-fpm.conf"
           $fpm_pool_dir            = "${config_root}/php-fpm.d"
-          $php_bin_dir             = "${php::globals::rhscl_root}/bin"
+          $php_bin_dir             = "${php::globals::rhscl_root}/usr/bin"
         }
         'rhscl': {
           $config_root_ini         = "${config_root}/php.d"
